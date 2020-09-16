@@ -1,6 +1,5 @@
 #include "core.h"
 #include "find_functions.h"
-#include "../extended_profiling/extended_profiling.h"
 #include "socket/socket.h"
 #include "../datum_socket/datum_socket.h"
 #include <fstream>
@@ -14,7 +13,6 @@ ProcSetupEntry** Core::proc_setup_table;
 int ByondVersion;
 int ByondBuild;
 unsigned int* Core::some_flags_including_profile;
-unsigned int Core::extended_profiling_insanely_hacky_check_if_its_a_new_call_or_resume;
 
 //std::vector<bool> Core::codecov_executed_procs;
 
@@ -287,7 +285,6 @@ void Core::cleanup()
 	Core::remove_all_hooks();
 	Core::opcode_handlers.clear();
 	Core::destroy_proc_list();
-	procs_to_profile.clear();
 	proc_hooks.clear();
 	global_direct_cache.clear();
 	clean_sockets();

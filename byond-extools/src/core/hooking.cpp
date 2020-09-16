@@ -1,10 +1,8 @@
 #include "hooking.h"
-#include "../tffi/tffi.h"
 #include <chrono>
 #include <fstream>
 #include "../third_party/json.hpp"
 #include <stack>
-#include "../extended_profiling/extended_profiling.h"
 #include <mutex>
 
 CrashProcPtr oCrashProc;
@@ -43,7 +41,6 @@ trvh REGPARM3 hCallGlobalProc(char usr_type, int usr_value, int proc_type, unsig
 		}
 		calling_queue = false;
 	}*/
-	Core::extended_profiling_insanely_hacky_check_if_its_a_new_call_or_resume = proc_id;
 	if (proc_hooks.find((unsigned short)proc_id) != proc_hooks.end())
 	{
 		trvh result = proc_hooks[proc_id](argListLen, argList, src_type ? Value(src_type, src_value) : static_cast<Value>(Value::Null()));
@@ -54,7 +51,6 @@ trvh REGPARM3 hCallGlobalProc(char usr_type, int usr_value, int proc_type, unsig
 		return result;
 	}
 	trvh result = oCallGlobalProc(usr_type, usr_value, proc_type, proc_id, const_0, src_type, src_value, argList, argListLen, const_0_2, const_0_3);
-	Core::extended_profiling_insanely_hacky_check_if_its_a_new_call_or_resume = -1;
 	return result;
 }
 

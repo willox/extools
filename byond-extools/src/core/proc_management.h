@@ -76,6 +76,5 @@ namespace Core
 }
 
 extern std::unordered_map<unsigned int, ProcHook> proc_hooks;
-extern std::unordered_map<unsigned int, bool> extended_profiling_procs;
 
 extern std::vector<bool> codecov_executed_procs;

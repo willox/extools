@@ -113,7 +113,6 @@ namespace Core
 	void FreeByondString(unsigned int id);
 	std::string GetStringFromId(unsigned int id);
 	Value get_turf(int x, int y, int z);
-	extern unsigned int extended_profiling_insanely_hacky_check_if_its_a_new_call_or_resume;
 	ExecutionContext* get_context();
 	ExecutionContext* _get_parent_context();
 	unsigned int register_opcode(std::string name, opcode_handler handler);
