@@ -32,6 +32,8 @@ TableHolder2* Core::datum_table = nullptr;
 TableHolder2* Core::list_table = nullptr;
 TableHolder2* Core::mob_table = nullptr;
 
+StringTable* Core::string_table = nullptr;
+
 Core::ManagedString::ManagedString(unsigned int id) : string_id(id)
 {
 	string_entry = GetStringTableEntry(string_id);

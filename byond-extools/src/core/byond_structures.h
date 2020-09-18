@@ -420,6 +420,12 @@ struct TableHolder2
 	unsigned int length;
 };
 
+struct StringTable
+{
+	String** strings;
+	uint32_t length;
+};
+
 struct VarListEntry;
 
 struct UnknownSimpleLinkedListEntry

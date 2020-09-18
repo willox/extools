@@ -101,6 +101,8 @@ namespace Core
 	extern TableHolder2* list_table; //list list honk
 	extern TableHolder2* mob_table;
 
+	extern StringTable* string_table;
+
 	extern std::unordered_map<std::string, Value*> global_direct_cache;
 	void global_direct_set(std::string name, Value val);
 	Value global_direct_get(std::string name);

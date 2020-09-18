@@ -82,6 +82,7 @@ typedef unsigned int(*GetRBTreeMemoryUsagePtr)(AssociativeListEntry* root);
 typedef trvh(*InitializeListFromContextPtr)(unsigned int list_id);
 typedef void(*DestroyListPtr)(unsigned int list_id);
 typedef void(*DestroyDatumPtr)(int unk1, int unk2, trvh datum);
+typedef void(REGPARM3 *LoadWorldPtr)(unsigned int unk1);
 
 extern CrashProcPtr CrashProc;
 extern StartTimingPtr StartTiming;
